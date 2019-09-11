@@ -23,11 +23,12 @@ rm  -rf  $HOME/openvpn.tar.gz                                                   
 mv       $HOME/openvpn-* $HOME/OpenVPN                                                                && \
 cd       $HOME/OpenVPN                                                                                && \
 ./configure --prefix=$HOME/openvpn                                                                       \
-            --bindir=$HOME/bin                                                                           \
+            --sbindir=$HOME/openvpn/bin                                                                  \
             --disable-lz4                                                                             && \
 make                                                                                                  && \
 make install                                                                                          && \
 cd       $HOME                                                                                        && \
 rm  -rf  $HOME/OpenVPN                                                                                && \
-echo "export PATH=$PATH:$HOME/openvpn/sbin" >> $HOME/.bashrc                                          && \
+rm  -rf  $HOME/openvpn/share/{doc,man}                                                                && \
+echo "export PATH=$PATH:$HOME/openvpn/bin" >> $HOME/.bashrc                                           && \
 exec $BASH
