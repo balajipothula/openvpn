@@ -4,6 +4,12 @@
 # Date        : 10 September 2019,
 # Description : Installing / Compiling OpenVPN from Source Code.
 
+# printing each command that is going to be executed
+set -x
+
+# exit bash script if any one of the line execution fail.
+set -e
+
 # update package repositories.
 sudo yum -y update
 
@@ -16,7 +22,9 @@ tar -xzf $HOME/openvpn.tar.gz -C $HOME                                          
 rm  -rf  $HOME/openvpn.tar.gz                                                                         && \
 mv       $HOME/openvpn-* $HOME/OpenVPN                                                                && \
 cd       $HOME/OpenVPN                                                                                && \
-./configure --prefix=$HOME/openvpn --disable-lz4                                                      && \
+./configure --prefix=$HOME/openvpn                                                                       \
+            --bindir=$HOME/bin                                                                           \
+            --disable-lz4                                                                             && \
 make                                                                                                  && \
 make install                                                                                          && \
 cd       $HOME                                                                                        && \
