@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Author      : BALAJI POTHULA (balaji.pothula@techie.com),
+# Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 29 April 2018,
-# Description : Setting openvpn server firewall.
+# Description : Setting OpenVPN server firewall.
 
 # flushing all rules.
 iptables -F
@@ -26,3 +26,6 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 # tracking connection.
 # packets relationship to previous connections.
 iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+# saving iptables rules.
+service iptables save
