@@ -8,7 +8,7 @@
 sudo yum -y update
 
 # installing build essentials.
-sudo yum -y install openssl-devel lzo-devel pam-devel
+sudo yum -y install gcc make openssl-devel lzo-devel pam-devel
 
 # openvpn downloading, extracting and compiling.
 curl -JL https://swupdate.openvpn.org/community/releases/openvpn-2.4.7.tar.gz -o $HOME/openvpn.tar.gz && \
