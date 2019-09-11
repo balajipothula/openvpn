@@ -12,3 +12,9 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 # what is my public ip address.
 #host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'
+
+# what is my public ip address.
+#curl http://checkip.amazonaws.com
+
+# what is my public ip address.
+#curl icanhazip.com
