@@ -40,7 +40,7 @@ service iptables save
 modprobe tun
 
 # appending tun module name to etc modules.
-echo "tun" | sudo tee -a /etc/modules
+echo "tun" | tee -a /etc/modules
 
 # enable ipv4 packet forwarding,
 # note: reboot not required.
@@ -48,7 +48,7 @@ sysctl -w net.ipv4.ip_forward=1
 
 # enable ipv4 packet forwarding,
 # note: reboot required.
-echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
+echo "net.ipv4.ip_forward=1" | tee -a /etc/sysctl.conf
 
 # reloading system variables.
 sysctl -p
