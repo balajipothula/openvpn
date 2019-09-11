@@ -4,7 +4,7 @@
 # Date        : 10 September 2019,
 # Description : Installing / Compiling OpenVPN from Source Code.
 
-# printing each command that is going to be executed
+# printing each command that is going to be executed.
 set -x
 
 # exit bash script if any one of the line execution fail.
