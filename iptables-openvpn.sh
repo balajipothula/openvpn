@@ -35,3 +35,9 @@ iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # saving iptables rules.
 service iptables save
+
+# enabling kernel module tun.
+modprobe tun
+
+# appending tun module name to etc modules.
+echo 'tun' | sudo tee -a /etc/modules
