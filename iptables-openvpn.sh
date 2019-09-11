@@ -4,6 +4,12 @@
 # Date        : 29 April 2018,
 # Description : Setting OpenVPN server firewall.
 
+# printing each command that is going to be executed.
+set -x
+
+# exit bash script if any one of the line execution fail.
+set -e
+
 # flushing all rules.
 iptables -F
 
