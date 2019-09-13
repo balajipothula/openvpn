@@ -27,7 +27,10 @@ iptables -A INPUT -m state --state NEW -p udp --dport 1194 -j ACCEPT
 
 # routing traffic through openvpn server.
 # 10.8.0.0, 10.8.1.0, ..., 10.8.255.0
-iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+<<comment
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24   -o eth0 -j MASQUERADE
+comment
+iptables -t nat -A POSTROUTING -s 172.17.2.0/24 -o eth0 -j MASQUERADE
 
 # tracking connection.
 # packets relationship to previous connections.
