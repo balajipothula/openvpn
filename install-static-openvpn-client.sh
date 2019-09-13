@@ -2,7 +2,7 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 10 September 2019,
-# Description : Installing / Compiling OpenVPN from Source Code.
+# Description : Installing / Compiling OpenVPN Client from Source Code.
 
 # printing each command that is going to be executed.
 set -x
@@ -22,10 +22,10 @@ tar -xzf $HOME/openvpn.tar.gz -C $HOME                                          
 rm  -rf  $HOME/openvpn.tar.gz                                                                         && \
 mv       $HOME/openvpn-* $HOME/OpenVPN                                                                && \
 cd       $HOME/OpenVPN                                                                                && \
-./configure --prefix=$HOME/openvpn                                                                       \
-            --sbindir=$HOME/openvpn/bin                                                                  \
+./configure --prefix=$HOME/openvpnclient                                                                 \
+            --sbindir=$HOME/openvpnclient                                                                \
+            --disable-server                                                                             \            
             --disable-lz4                                                                                \
-            --disable-server                                                                             \
             --enable-static                                                                              \
             --disable-shared                                                                             \
             --disable-debug                                                                              \
@@ -34,6 +34,6 @@ make LIBS="-all-static"                                                         
 make install                                                                                          && \
 cd       $HOME                                                                                        && \
 rm  -rf  $HOME/OpenVPN                                                                                && \
-rm  -rf  $HOME/openvpn/share/{doc,man}                                                                && \
-echo "export PATH=$PATH:$HOME/openvpn/bin" >> $HOME/.bashrc                                           && \
+rm  -rf  $HOME/openvpnclient/{doc,include,man,share}                                                  && \
+echo "export PATH=$PATH:$HOME/openvpnclient" >> $HOME/.bashrc                                         && \
 exec $BASH
