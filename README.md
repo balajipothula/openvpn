@@ -10,7 +10,7 @@ start openvpn server.
 sudo $(pwd)/openvpnserver/openvpn --config $(pwd)/openvpnserver/openvpn.conf &  
 
 start openvpn client.  
-sudo $(pwd)/openvpnclient/openvpn --config $(pwd)/openvpnclient/client.ovpn  &  
+sudo $(pwd)/openvpnclient/openvpn --config $(pwd)/openvpnclient/client2.ovpn &  
 
 kill  openvpn service.  
 ps -A | grep openvpn | awk '{print $1}' | xargs sudo kill
