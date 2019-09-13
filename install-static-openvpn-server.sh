@@ -23,7 +23,7 @@ rm  -rf  $HOME/openvpn.tar.gz                                                   
 mv       $HOME/openvpn-* $HOME/OpenVPN                                                                && \
 cd       $HOME/OpenVPN                                                                                && \
 ./configure --prefix=$HOME/openvpn                                                                       \
-            --sbindir=$HOME/openvpn/bin                                                                  \
+            --sbindir=$HOME/openvpn                                                                      \
             --disable-lz4                                                                                \
             --enable-static                                                                              \
             --disable-shared                                                                             \
@@ -33,6 +33,6 @@ make LIBS="-all-static"                                                         
 make install                                                                                          && \
 cd       $HOME                                                                                        && \
 rm  -rf  $HOME/OpenVPN                                                                                && \
-rm  -rf  $HOME/openvpn/share/{doc,man}                                                                && \
-echo "export PATH=$PATH:$HOME/openvpn/bin" >> $HOME/.bashrc                                           && \
+rm  -rf  $HOME/openvpn/share/{doc,include,man,share}                                                  && \
+echo "export PATH=$PATH:$HOME/openvpn" >> $HOME/.bashrc                                               && \
 exec $BASH
