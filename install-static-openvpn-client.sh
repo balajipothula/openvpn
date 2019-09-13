@@ -24,7 +24,7 @@ mv       $HOME/openvpn-* $HOME/OpenVPN                                          
 cd       $HOME/OpenVPN                                                                                && \
 ./configure --prefix=$HOME/openvpnclient                                                                 \
             --sbindir=$HOME/openvpnclient                                                                \
-            --disable-server                                                                             \            
+            --disable-server                                                                             \
             --disable-lz4                                                                                \
             --enable-static                                                                              \
             --disable-shared                                                                             \
