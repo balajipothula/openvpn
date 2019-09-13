@@ -33,6 +33,6 @@ make LIBS="-all-static"                                                         
 make install                                                                                          && \
 cd       $HOME                                                                                        && \
 rm  -rf  $HOME/OpenVPN                                                                                && \
-rm  -rf  $HOME/openvpn/share/{doc,include,man,share}                                                  && \
+rm  -rf  $HOME/openvpn/{doc,include,man,share}                                                        && \
 echo "export PATH=$PATH:$HOME/openvpn" >> $HOME/.bashrc                                               && \
 exec $BASH
