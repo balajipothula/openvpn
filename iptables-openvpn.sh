@@ -2,7 +2,9 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 29 April 2018,
-# Description : Setting OpenVPN server firewall.
+# Description : Setting OpenVPN Server Firewall.
+
+# Please run this script with sudo privileges.
 
 # printing each command that is going to be executed.
 set -x
