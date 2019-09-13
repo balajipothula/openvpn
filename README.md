@@ -1,8 +1,9 @@
 # openvpn
 
+start openvpn service.  
 sudo $(pwd)/openvpnserver/openvpn --config $(pwd)/openvpnserver/openvpn.conf &  
 
-### kill openvpn
+kill  openvpn service.  
 ps -A | grep openvpn | awk '{print $1}' | xargs sudo kill
 
 curl -JOL https://raw.githubusercontent.com/balajipothula/openvpn/master/openvpn.tar.gz  
