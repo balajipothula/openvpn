@@ -1,9 +1,9 @@
 # openvpn
 
-download openvpn server.
+download openvpn server.  
 curl -JOL https://raw.githubusercontent.com/balajipothula/openvpn/master/openvpnserver.tar.gz  
 
-download openvpn client.
+download openvpn client.  
 curl -JOL https://raw.githubusercontent.com/balajipothula/openvpn/master/openvpnclient.tar.gz  
 
 start openvpn server.  
